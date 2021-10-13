@@ -34,7 +34,7 @@
 
 具体的feature如下：
 
-![](images/img1.png)
+![](images/1-img1.png)
 
 ## 2. 准备基本数据
 
@@ -44,7 +44,28 @@
 
 pandas的read_csv的参数：
 
-![](images/img2.png)
-![](images/img3.png)
+![](images/1-img2.png)
+![](images/1-img3.png)
 
 经处理完的数据通过matplotlib画出来
+
+## 3. 多元LSTM预测模型
+
+### LSTM数据准备
+
+将问题作为有监督问题并规范化输入变量。
+
+此处的有监督问题为给出前段时间的污染衡量标准与天气状况以预测当前t小时的污染。
+
+可供选择的问题公式化：
+
+- 基于过去24小时的天气状况和污染预测下个小时的污染。
+- 同上，并给出下一小时的“预期”天气条件。
+
+通过使用 *series_to_supervised()* 方法转换数据集。
+
+[How to Convert a Time Series to a Supervised Learning Problem in Python](https://machinelearningmastery.com/convert-time-series-supervised-learning-problem-python/)
+
+首先加载“pollution.csv”。风向特征被label encoded。这之后可用独热编码处理。
+
+之后所有的特征都被标准化，数据集被转为有监督学习问题。要被预测的t小时的天气变量被移除。
