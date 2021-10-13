@@ -33,6 +33,7 @@
 下载到根目录下并重命名为raw.csv
 
 具体的feature如下：
+
 ![](images/img1.png)
 
 ## 2. 准备基本数据
@@ -42,6 +43,7 @@
 看一眼原始数据会发现前几行数据里的PM2.5的值是NA，所以把前几行去除。数据中还有零散的NA，目前我们把它看作0值。
 
 pandas的read_csv的参数：
+
 ![](images/img2.png)
 ![](images/img3.png)
 
